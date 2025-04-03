@@ -1,0 +1,11 @@
+name: us_osm_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - osnmnx
+  - pandas
+  - requests
+  - geopandas
+  - fiona
