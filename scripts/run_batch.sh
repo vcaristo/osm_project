@@ -12,7 +12,7 @@
 module load conda
 
 # init conda
-$(conda info --base)/etc/profile.d/conda.sh
+source $(conda info --base)/etc/profile.d/conda.sh
 
 conda activate us_osm_env
 
