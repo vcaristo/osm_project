@@ -7,5 +7,3 @@ dependencies:
   - osnmnx
   - pandas
   - requests
-  - geopandas
-  - fiona
