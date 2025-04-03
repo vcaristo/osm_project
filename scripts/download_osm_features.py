@@ -30,12 +30,12 @@ tags = {"leisure":["pitch", "park", "sports_centre"],
 
 states = counties_df['state'].unique()
 
-for state in states[:1]:
+for state in states:
     # create state folder
     state_path = download_path / state
     os.makedirs(state_path, exist_ok=True)
 
-    for _, county_row in counties_df[counties_df['state'] == state][:3].iterrows():
+    for _, county_row in counties_df[counties_df['state'] == state].iterrows():
 
         county_full = county_row['name_full']
         county_abbrev = get_abbrev_name(county_row).replace(".","").replace(" ", "_")
