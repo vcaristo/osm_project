@@ -1,0 +1,31 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post
+	# Could also be setup per software as headless mode #
+    export DEBIAN_FRONTEND=noninteractive
+
+    apt-get update -y
+    apt-get install -y --no-install-recommends \
+        python3=3.10 \
+        python3-pip \
+        pandas \
+        geopandas 
+
+    # Install stuff #
+    pip3 install --upgrade pip
+    pip3 install pandas geopandas
+
+    # Clean up #
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+%runscript
+
+    exec "$@"
+
+
+%labels
+    Author Vince Caristo
+    Version v1.0
+    Description "Execute Script to Count Features"

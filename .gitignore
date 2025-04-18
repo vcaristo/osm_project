@@ -1,4 +1,4 @@
 *.pdf
 cache/*
-data/*
-mso_features.gpkg
+*.gpkg
+*.sif
