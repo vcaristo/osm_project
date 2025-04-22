@@ -1,8 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=count-features
-#SBATCH --output=slurm_out/count-features_1_machine.out
-#SBATCH --error=slurm_out/count-features-1_machine.err
+#SBATCH --output=slurm_out/count-features_49_machines.out
+#SBATCH --error=slurm_out/count-features_49_machines.err
 #SBATCH --time=12:00:00
+#SBATCH --array=0-49
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=1
 #SBATCH --mail-type=all
@@ -19,14 +20,19 @@
 
 # 'apptainer run --bind <path_to_local_folder>:<path_in_apptainer> <path to the apptainer sif> <path to the script to run>'
 
-echo "Job started on $(date)"
-START=$(date +%s)
+
+#START=$(date +%s)
+
+mapfile -t STATES < ~/osm_project/data/states.txt
+
+STATE=${STATES[$SLURM_ARRAY_TASK_ID]}
 
 apptainer run --bind ~/osm_project/:/mnt/osm_project/ \
         ~/osm_project/hpc/apptainer/geopy_container.sif \
-        /mnt/osm_project/dev/count_features/count_features_apptainer.py
+        /mnt/osm_project/dev/count_features/count_features_apptainer_Parallel-Nodes.py "$STATE"
 
-END=$(date +%s)
-RUNTIME=$((END - START))
+#END=$(date +%s)
+#RUNTIME=$((END - START))
 
-echo "Run time: $RUNTIME seconds ($(awk "BEGIN {print $RUNTIME/60}") minutes)"
+
+#echo "Run time: $RUNTIME seconds ($(awk "BEGIN {print $RUNTIME/60}") minutes)"
