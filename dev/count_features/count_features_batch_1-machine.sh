@@ -19,7 +19,6 @@
 
 # 'apptainer run --bind <path_to_local_folder>:<path_in_apptainer> <path to the apptainer sif> <path to the script to run>'
 
-echo "Job started on $(date)"
 START=$(date +%s)
 
 apptainer run --bind ~/osm_project/:/mnt/osm_project/ \
