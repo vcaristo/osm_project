@@ -1,0 +1,25 @@
+category	sub_category	value	devices	sub_category_sort_order	unit
+Age	<18	0.18411408	1264.0	1	percent
+Age	18-24	0.11523323	1264.0	2	percent
+Age	25-34	0.16074375	1264.0	3	percent
+Age	35-44	0.14120585	1264.0	4	percent
+Age	45-54	0.11555807	1264.0	5	percent
+Age	55-64	0.12641812	1264.0	6	percent
+Age	65+	0.1559197	1264.0	7	percent
+Economic	Median HH Income	65712.36759868421	1216.0	1	dollar
+Economic	Median Home Value	342615.68959731545	1192.0	2	dollar
+Education	No HS	0.04652049	1264.0	1	percent
+Education	HS	0.21172136	1264.0	2	percent
+Education	Some College/2 Year	0.32698378	1264.0	3	percent
+Education	Bachelor	0.26712911	1264.0	4	percent
+Education	Higher Degree	0.14685823	1264.0	5	percent
+Income	0-29K	0.24738972	1264.0	1	percent
+Income	30-74K	0.36244035	1264.0	2	percent
+Income	75-99K	0.12469106	1264.0	3	percent
+Income	100-149K	0.14565704	1264.0	4	percent
+Income	150K+	0.11902674	1264.0	5	percent
+Race	African American	0.0095216	1264.0	1	percent
+Race	Asian	0.01872801	1264.0	2	percent
+Race	Hispanic	0.04900775	1264.0	3	percent
+Race	Other or Mixed	0.07703956	1264.0	4	percent
+Race	White	0.84491986	1264.0	5	percent
